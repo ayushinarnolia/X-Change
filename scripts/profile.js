@@ -47,6 +47,55 @@ style.textContent = `
 `;
 document.head.appendChild(style);
 
+// Check if user is logged in and display user data
+document.addEventListener('DOMContentLoaded', function() {
+    const userData = JSON.parse(localStorage.getItem('userData'));
+    
+    if (!userData) {
+        // If no user data, redirect to login
+        window.location.href = 'login.html';
+        return;
+    }
+
+    // Update profile information
+    const usernameElement = document.getElementById('username-display');
+    const emailElement = document.getElementById('email-display');
+    
+    if (usernameElement) {
+        usernameElement.textContent = userData.username;
+    }
+    
+    if (emailElement) {
+        emailElement.textContent = userData.email;
+    }
+
+    // Handle profile edit form
+    const editProfileForm = document.getElementById('edit-profile-form');
+    if (editProfileForm) {
+        editProfileForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const newUsername = document.getElementById('new-username').value;
+            const newEmail = document.getElementById('new-email').value;
+            
+            // Update user data
+            userData.username = newUsername;
+            userData.email = newEmail;
+            localStorage.setItem('userData', JSON.stringify(userData));
+            
+            // Update display
+            if (usernameElement) {
+                usernameElement.textContent = newUsername;
+            }
+            if (emailElement) {
+                emailElement.textContent = newEmail;
+            }
+            
+            alert('Profile updated successfully!');
+        });
+    }
+});
+
 // Handle avatar edit button
 const editAvatarBtn = document.querySelector('.edit-avatar');
 const fileInput = document.createElement('input');

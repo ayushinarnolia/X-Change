@@ -186,14 +186,19 @@ body {
     color: #2c3e50;
 }
 
-.location, .member-since {
+.location, .member-since, .email {
     color: #666;
     margin: 5px 0;
 }
 
-.location i, .member-since i {
+.location i, .member-since i, .email i {
     margin-right: 8px;
     color: #4b9cd3;
+}
+
+.profile-info .email i {
+    color: #4a90e2;
+    margin-right: 8px;
 }
 
 /* Profile Stats */

@@ -1,3 +1,99 @@
+// Check if user is logged in
+document.addEventListener('DOMContentLoaded', function() {
+    const userData = JSON.parse(localStorage.getItem('userData'));
+    
+    if (!userData) {
+        // If no user data, redirect to login
+        window.location.href = 'login.html';
+        return;
+    }
+
+    // Populate form with existing user data
+    const fullNameInput = document.getElementById('full-name');
+    const emailInput = document.getElementById('email');
+    const phoneInput = document.getElementById('phone');
+    const locationInput = document.getElementById('location');
+    const bioInput = document.getElementById('bio');
+    const preferredCategoriesSelect = document.getElementById('preferred-categories');
+
+    if (fullNameInput) fullNameInput.value = userData.username || '';
+    if (emailInput) emailInput.value = userData.email || '';
+    if (phoneInput) phoneInput.value = userData.phone || '';
+    if (locationInput) locationInput.value = userData.location || '';
+    if (bioInput) bioInput.value = userData.bio || '';
+    if (preferredCategoriesSelect && userData.preferredCategories) {
+        Array.from(preferredCategoriesSelect.options).forEach(option => {
+            option.selected = userData.preferredCategories.includes(option.value);
+        });
+    }
+
+    // Handle profile picture upload
+    const uploadTrigger = document.getElementById('upload-trigger');
+    const profilePicture = document.getElementById('profile-picture');
+    const profilePreview = document.getElementById('profile-preview');
+    const removePicture = document.getElementById('remove-picture');
+
+    if (uploadTrigger && profilePicture) {
+        uploadTrigger.addEventListener('click', () => {
+            profilePicture.click();
+        });
+
+        profilePicture.addEventListener('change', (e) => {
+            const file = e.target.files[0];
+            if (file && file.type.startsWith('image/')) {
+                const reader = new FileReader();
+                reader.onload = (e) => {
+                    profilePreview.src = e.target.result;
+                    userData.profilePicture = e.target.result;
+                    localStorage.setItem('userData', JSON.stringify(userData));
+                };
+                reader.readAsDataURL(file);
+            }
+        });
+    }
+
+    if (removePicture) {
+        removePicture.addEventListener('click', () => {
+            profilePreview.src = 'images/default-avatar.png';
+            userData.profilePicture = null;
+            localStorage.setItem('userData', JSON.stringify(userData));
+        });
+    }
+
+    // Handle form submission
+    const editProfileForm = document.getElementById('edit-profile-form');
+    if (editProfileForm) {
+        editProfileForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Update user data
+            userData.username = fullNameInput.value;
+            userData.email = emailInput.value;
+            userData.phone = phoneInput.value;
+            userData.location = locationInput.value;
+            userData.bio = bioInput.value;
+            userData.preferredCategories = Array.from(preferredCategoriesSelect.selectedOptions).map(option => option.value);
+            
+            // Save updated user data
+            localStorage.setItem('userData', JSON.stringify(userData));
+            
+            // Show success message
+            alert('Profile updated successfully!');
+            
+            // Redirect back to profile page
+            window.location.href = 'profile.html';
+        });
+    }
+
+    // Handle cancel button
+    const cancelBtn = document.querySelector('.cancel-btn');
+    if (cancelBtn) {
+        cancelBtn.addEventListener('click', () => {
+            window.location.href = 'profile.html';
+        });
+    }
+});
+
 // Sidebar Toggle Functionality
 const sidebarToggle = document.getElementById('sidebar-toggle');
 const sidebar = document.getElementById('sidebar');
