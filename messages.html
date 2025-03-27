@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Messages - X-change</title>
+    <link rel="stylesheet" href="styles/messages.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Sidebar Toggle Button -->
+    <button class="sidebar-toggle">
+        <i class="fas fa-bars"></i>
+    </button>
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <div class="sidebar-header">
+            <h2>X-change</h2>
+            <button class="close-btn">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <ul class="sidebar-menu">
+            <li><a href="profile.html"><i class="fas fa-user"></i> Profile</a></li>
+            <li><a href="dashboard.html"><i class="fas fa-chart-line"></i> Dashboard</a></li>
+            <li><a href="exchange.html"><i class="fas fa-exchange-alt"></i> Exchange</a></li>
+            <li><a href="browse-listings.html"><i class="fas fa-search"></i> Browse Listings</a></li>
+            <li><a href="create-listing.html"><i class="fas fa-plus-circle"></i> Create Listing</a></li>
+            <li><a href="my-listings.html"><i class="fas fa-list"></i> My Listings</a></li>
+            <li><a href="transaction-history.html"><i class="fas fa-history"></i> Transaction History</a></li>
+            <li><a href="messages.html" class="active"><i class="fas fa-comments"></i> Messages</a></li>
+            <li><a href="contact.html"><i class="fas fa-envelope"></i> Contact</a></li>
+            <li><a href="#" id="logoutBtn"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+        </ul>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <div class="messages-container">
+            <div class="messages-header">
+                <h1>Messages</h1>
+                <div class="search-box">
+                    <input type="text" placeholder="Search conversations...">
+                    <i class="fas fa-search"></i>
+                </div>
+            </div>
+
+            <div class="chat-list">
+                <!-- Chat Item 1 -->
+                <div class="chat-item" data-user-id="shivani-sharma">
+                    <img src="images/avatar5.png" alt="avatar" class="chat-avatar">
+                    <div class="chat-info">
+                        <div class="chat-header">
+                            <h3>Shivani Sharma</h3>
+                            <span class="chat-time">10:30 AM</span>
+                        </div>
+                        <p class="last-message">Hi, I'm interested in your skirt. Would you be interested in exchanging it for my tshirt?</p>
+                        <span class="unread-badge">2</span>
+                    </div>
+                </div>
+
+                <!-- Chat Item 2 -->
+                <div class="chat-item" data-user-id="mihika-singh">
+                    <img src="images/avatar6.png" alt="Jane Smith" class="chat-avatar">
+                    <div class="chat-info">
+                        <div class="chat-header">
+                            <h3>Mihika Singh</h3>
+                            <span class="chat-time">Yesterday</span>
+                        </div>
+                        <p class="last-message">Yes, I'm interested in your CAO Notes. Can we arrange a time to meet and exchange?</p>
+                        <span class="unread-badge">1</span>
+                    </div>
+                </div>
+
+                <!-- Chat Item 3 -->
+                <div class="chat-item" data-user-id="rohit-kumar">
+                    <img src="images/avatar7.png" alt="Mike Wilson" class="chat-avatar">
+                    <div class="chat-info">
+                        <div class="chat-header">
+                            <h3>Rohit Kumar</h3>
+                            <span class="chat-time">2 days ago</span>
+                        </div>
+                        <p class="last-message">Thanks for the exchange! I'll be available tomorrow afternoon if you're free.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Chat Popup -->
+    <div class="chat-popup">
+        <div class="chat-popup-header">
+            <div class="chat-user-info">
+                <img src="images/avatar5.png" alt="User Avatar" class="chat-avatar">
+                <div>
+                    <h3>Shivani Sharma</h3>
+                    <span class="status">Online</span>
+                </div>
+            </div>
+            <button class="close-chat-btn">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div class="chat-messages">
+            <!-- Messages will be dynamically added here -->
+        </div>
+        <div class="chat-input">
+            <input type="text" placeholder="Type a message...">
+            <button class="send-btn">
+                <i class="fas fa-paper-plane"></i>
+            </button>
+        </div>
+    </div>
+
+    <!-- Chatbot Icon -->
+    <div class="chatbot-icon">
+        🤖
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 X-change. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="scripts/messages.js"></script>
+    <script src="scripts/logout.js"></script>
+</body>
+</html> 

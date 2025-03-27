@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transaction History - X-change</title>
+    <link rel="stylesheet" href="styles/transaction-history.css">
+    <link rel="stylesheet" href="styles/logout.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Sidebar Toggle Button -->
+    <button class="sidebar-toggle" id="sidebar-toggle">
+        &#9776;
+    </button>
+
+    <!-- Sidebar Menu (Pop-up) -->
+    <div class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <h2>X-change</h2>
+            <button class="close-btn" id="close-btn">&times;</button>
+        </div>
+        <ul class="sidebar-menu">
+            <li><a href="profile.html"><i class="fas fa-user"></i> Profile</a></li>
+            <li><a href="dashboard.html"><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
+            <li><a href="exchange.html"><i class="fas fa-exchange-alt"></i> Exchange</a></li>
+            <li><a href="browse-listings.html"><i class="fas fa-search"></i> Browse Listings</a></li>
+            <li><a href="create-listing.html"><i class="fas fa-plus-circle"></i> Create Listing</a></li>
+            <li><a href="my-listings.html"><i class="fas fa-list"></i> My Listings</a></li>
+            <li><a href="transaction-history.html" class="active"><i class="fas fa-history"></i> Transaction History</a></li>
+            <li><a href="messages.html"><i class="fas fa-comments"></i> Messages</a></li>
+            <li><a href="contact.html"><i class="fas fa-envelope"></i> Contact</a></li>
+            <li><a href="logout.html"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+        </ul>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content" id="main-content">
+        <div class="transaction-history-container">
+            <div class="transaction-history-header">
+                <h1>Transaction History</h1>
+                <p>View and track all your exchanges and transactions</p>
+            </div>
+
+            <!-- Filter Options -->
+            <div class="filter-options">
+                <select id="status-filter">
+                    <option value="all">All Status</option>
+                    <option value="completed">Completed</option>
+                    <option value="pending">Pending</option>
+                    <option value="cancelled">Cancelled</option>
+                </select>
+                <select id="type-filter">
+                    <option value="all">All Types</option>
+                    <option value="sent">Sent</option>
+                    <option value="received">Received</option>
+                </select>
+                <select id="date-filter">
+                    <option value="all">All Time</option>
+                    <option value="last-week">Last Week</option>
+                    <option value="last-month">Last Month</option>
+                    <option value="last-year">Last Year</option>
+                </select>
+                <button class="export-btn">
+                    <i class="fas fa-download"></i> Export History
+                </button>
+            </div>
+
+            <!-- Transactions List -->
+            <div class="transactions-list">
+                <!-- Transaction Item -->
+                <div class="transaction-item">
+                    <div class="transaction-icon sent">
+                        <i class="fas fa-arrow-up"></i>
+                    </div>
+                    <div class="transaction-details">
+                        <div class="transaction-header">
+                            <h3>CAO Notes</h3>
+                            <span class="status completed">Completed</span>
+                        </div>
+                        <p class="exchange-info">Exchanged with: Mazidi</p>
+                        <p class="transaction-meta">
+                            <span class="user"><i class="fas fa-user"></i>Suzane Shah</span>
+                            <span class="date"><i class="fas fa-calendar"></i> March 10, 2025</span>
+                            <span class="location"><i class="fas fa-map-marker-alt"></i>Vellore, Tamil Nadu</span>
+                        </p>
+                    </div>
+                    <div class="transaction-actions">
+                        <button class="view-details-btn">View Details</button>
+                    </div>
+                </div>
+
+                <!-- Transaction Item -->
+                <div class="transaction-item">
+                    <div class="transaction-icon received">
+                        <i class="fas fa-arrow-down"></i>
+                    </div>
+                    <div class="transaction-details">
+                        <div class="transaction-header">
+                            <h3>Tshirt</h3>
+                            <span class="status pending">Pending</span>
+                        </div>
+                        <p class="exchange-info">Exchanging for: Heels</p>
+                        <p class="transaction-meta">
+                            <span class="user"><i class="fas fa-user"></i> Mihika Singh</span>
+                            <span class="date"><i class="fas fa-calendar"></i> March 20, 2025</span>
+                            <span class="location"><i class="fas fa-map-marker-alt"></i>Bangalore, Karnataka</span>
+                        </p>
+                    </div>
+                    <div class="transaction-actions">
+                        <button class="view-details-btn">View Details</button>
+                    </div>
+                </div>
+
+                <!-- Transaction Item -->
+                <div class="transaction-item">
+                    <div class="transaction-icon sent">
+                        <i class="fas fa-arrow-up"></i>
+                    </div>
+                    <div class="transaction-details">
+                        <div class="transaction-header">
+                            <h3>Table</h3>
+                            <span class="status cancelled">Cancelled</span>
+                        </div>
+                        <p class="exchange-info">Exchange cancelled: Sofa</p>
+                        <p class="transaction-meta">
+                            <span class="user"><i class="fas fa-user"></i>Rohit Kumar</span>
+                            <span class="date"><i class="fas fa-calendar"></i> Feb 7, 2025</span>
+                            <span class="location"><i class="fas fa-map-marker-alt"></i>Pune, Maharashtra</span>
+                        </p>
+                    </div>
+                    <div class="transaction-actions">
+                        <button class="view-details-btn">View Details</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Pagination -->
+            <div class="pagination">
+                <button class="page-btn" disabled><i class="fas fa-chevron-left"></i></button>
+                <button class="page-btn active">1</button>
+                <button class="page-btn">2</button>
+                <button class="page-btn">3</button>
+                <button class="page-btn"><i class="fas fa-chevron-right"></i></button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Chatbot Icon -->
+    <div class="chatbot-icon">
+        🤖
+    </div>
+
+    <script src="scripts/transaction-history.js"></script>
+    <script src="scripts/logout.js"></script>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 X-change. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html> 

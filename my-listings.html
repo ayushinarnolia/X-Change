@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Listings - X-change</title>
+    <link rel="stylesheet" href="styles/my-listings.css">
+    <link rel="stylesheet" href="styles/logout.css">
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <!-- Sidebar Toggle Button -->
+    <button class="sidebar-toggle" id="sidebar-toggle">
+        &#9776; <!-- Hamburger icon -->
+    </button>
+
+    <!-- Sidebar Menu (Pop-up) -->
+    <div class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <h2>X-change</h2>
+            <button class="close-btn" id="close-btn">&times;</button>
+        </div>
+        <ul class="sidebar-menu">
+            <li><a href="profile.html"><i class="fas fa-user"></i> Profile</a></li>
+            <li><a href="dashboard.html"><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
+            <li><a href="exchange.html"><i class="fas fa-exchange-alt"></i> Exchange</a></li>
+            <li><a href="browse-listings.html"><i class="fas fa-search"></i> Browse Listings</a></li>
+            <li><a href="create-listing.html"><i class="fas fa-plus-circle"></i> Create Listing</a></li>
+            <li><a href="my-listings.html" class="active"><i class="fas fa-list"></i> My Listings</a></li>
+            <li><a href="transaction-history.html"><i class="fas fa-history"></i> Transaction History</a></li>
+            <li><a href="messages.html"><i class="fas fa-comments"></i> Messages</a></li>
+            <li><a href="contact.html"><i class="fas fa-envelope"></i> Contact</a></li>
+            <li><a href="logout.html"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+        </ul>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content" id="main-content">
+        <div class="my-listings-container">
+            <div class="my-listings-header">
+                <h1>My Listings</h1>
+                <p>Manage your active listings and track their status</p>
+            </div>
+
+            <!-- Filter Options -->
+            <div class="filter-options">
+                <select id="status-filter">
+                    <option value="all">All Status</option>
+                    <option value="active">Active</option>
+                    <option value="pending">Pending</option>
+                    <option value="completed">Completed</option>
+                    <option value="cancelled">Cancelled</option>
+                </select>
+                <select id="category-filter">
+                    <option value="all">All Categories</option>
+                    <option value="electronics">Electronics</option>
+                    <option value="clothing">Clothing</option>
+                    <option value="books">Books</option>
+                    <option value="furniture">Furniture</option>
+                    <option value="makeup">Makeup</option>
+                    <option value="footwear">Footwear</option>
+                    <option value="other">Other</option>
+                </select>
+                <button class="create-new-btn" onclick="window.location.href='create-listing.html'">
+                    <i class="fas fa-plus"></i> Create New Listing
+                </button>
+            </div>
+
+            <!-- Listings Grid -->
+            <div class="listings-grid" id="listings-grid">
+                <!-- Laptop Listing Card -->
+
+                <!-- Camera Listing Card -->
+                <div class="listing-card">
+                    <div class="listing-image">
+                        <img src="images/camera.jpg" alt="Camera">
+                        <span class="status-badge pending">Pending</span>
+                    </div>
+                    <div class="listing-details">
+                        <h3>DLSR Camera</h3>
+                        <p class="category">Electronics</p>
+                        <p class="description">Professional camera in perfect condition.</p>
+                        <div class="listing-actions">
+                            <button class="edit-btn">
+                                <i class="fas fa-edit"></i> Edit
+                            </button>
+                            <button class="delete-btn">
+                                <i class="fas fa-trash"></i> Delete
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Shoes Listing Card -->
+                <div class="listing-card">
+                    <img src="images/shoes.jpg" alt="Running Shoes" class="listing-image">
+                    <div class="listing-details">
+                        <h3>Nike Running Shoes</h3>
+                        <p class="listing-description">Lightly used running shoes, size 10. Great condition, only worn a few times.</p>
+                        <div class="listing-meta">
+                            <span class="listing-date"><i class="fas fa-calendar"></i> Listed: 1 week ago</span>
+                            <span class="listing-status active"><i class="fas fa-circle"></i> Active</span>
+                        </div>
+                        <div class="listing-actions">
+                            <button class="edit-btn"><i class="fas fa-edit"></i> Edit</button>
+                            <button class="delete-btn"><i class="fas fa-trash"></i> Delete</button>
+                            <button class="view-btn"><i class="fas fa-eye"></i> View</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Pagination -->
+            <div class="pagination">
+                <button class="page-btn" disabled><i class="fas fa-chevron-left"></i></button>
+                <button class="page-btn active">1</button>
+                <button class="page-btn">2</button>
+                <button class="page-btn">3</button>
+                <button class="page-btn"><i class="fas fa-chevron-right"></i></button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Chatbot Icon -->
+    <div class="chatbot-icon">
+        🤖
+    </div>
+
+    <script src="scripts/my-listings.js"></script>
+    <script src="scripts/logout.js"></script>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 X-change. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html> 

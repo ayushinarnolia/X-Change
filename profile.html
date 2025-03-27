@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile - X-change</title>
+    <link rel="stylesheet" href="styles/profile.css">
+    <link rel="stylesheet" href="styles/logout.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Sidebar Toggle Button -->
+    <button class="sidebar-toggle" id="sidebar-toggle">
+        &#9776;
+    </button>
+
+    <!-- Sidebar Menu -->
+    <div class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <h2>X-change</h2>
+            <button class="close-btn" id="close-btn">&times;</button>
+        </div>
+        <ul class="sidebar-menu">
+            <li><a href="profile.html" class="active"><i class="fas fa-user"></i> Profile</a></li>
+            <li><a href="dashboard.html"><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
+            <li><a href="exchange.html"><i class="fas fa-exchange-alt"></i> Exchange</a></li>
+            <li><a href="browse-listings.html"><i class="fas fa-search"></i> Browse Listings</a></li>
+            <li><a href="create-listing.html"><i class="fas fa-plus-circle"></i> Create Listing</a></li>
+            <li><a href="my-listings.html"><i class="fas fa-list"></i> My Listings</a></li>
+            <li><a href="transaction-history.html"><i class="fas fa-history"></i> Transaction History</a></li>
+            <li><a href="messages.html"><i class="fas fa-comments"></i> Messages</a></li>
+            <li><a href="contact.html"><i class="fas fa-envelope"></i> Contact</a></li>
+            <li><a href="logout.html"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+        </ul>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content" id="main-content">
+        <div class="profile-container">
+            <div class="profile-header">
+                <div class="profile-cover">
+                    <div class="profile-avatar">
+                        <img src="images/avatar1.png" alt="Profile Picture">
+                    </div>
+                </div>
+                <div class="profile-info">
+                    <h1>Ayushi Narnolia</h1>
+                    <p class="location"><i class="fas fa-map-marker-alt"></i> Mumbai, India</p>
+                    <p class="member-since"><i class="fas fa-calendar"></i> Member since February 2025</p>
+                    <div class="profile-stats">
+                        <div class="stat">
+                            <span class="stat-value">15</span>
+                            <span class="stat-label">Listings</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-value">8</span>
+                            <span class="stat-label">Exchanges</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-value">4.8</span>
+                            <span class="stat-label">Rating</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="profile-sections">
+                <div class="section">
+                    <div class="section-header">
+                        <h2>About Me</h2>
+                        <a href="edit-profile.html" class="edit-profile-btn">
+                            <i class="fas fa-edit"></i> Edit Profile
+                        </a>
+                    </div>
+                    <p>Tech enthusiast and avid collector. Always looking for interesting items to exchange and meeting new people in the community.</p>
+                </div>
+
+                <div class="section">
+                    <h2>Recent Listings</h2>
+                    <div class="recent-listings">
+                        <div class="listing-card">
+                            <img src="images/notes.jpg" alt="Notes">
+                            <div class="listing-info">
+                                <h3>CAO Notes</h3>
+                                <p>Listed 2 days ago</p>
+                            </div>
+                        </div>
+                        <div class="listing-card">
+                            <img src="images/sofa.jpg" alt="Sofa">
+                            <div class="listing-info">
+                                <h3>Sofa</h3>
+                                <p>Listed 5 days ago</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <h2>Reviews</h2>
+                    <div class="reviews">
+                        <div class="review">
+                            <div class="review-header">
+                                <img src="images/avatar2.png" alt="User 1">
+                                <div class="review-info">
+                                    <h4>Roshan Arora</h4>
+                                    <div class="rating">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star-half-alt"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <p>Great exchange partner! Very responsive and item was exactly as described.</p>
+                        </div>
+                        <div class="review">
+                            <div class="review-header">
+                                <img src="images/avatar3.png" alt="User 2">
+                                <div class="review-info">
+                                    <h4>Priya Sharma</h4>
+                                    <div class="rating">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <p>Smooth transaction and excellent communication throughout the exchange process.</p>
+                        </div>
+                        <div class="review">
+                            <div class="review-header">
+                                <img src="images/avatar5.png" alt="User 3">
+                                <div class="review-info">
+                                    <h4>Suhani Mittal</h4>
+                                    <div class="rating">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <p>Very professional and trustworthy. Would definitely exchange with again!</p>
+                        </div>
+                        <div class="review">
+                            <div class="review-header">
+                                <img src="images/avatar7.png" alt="User 4">
+                                <div class="review-info">
+                                    <h4>Neha Gupta</h4>
+                                    <div class="rating">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <p>Quick response time and item was in perfect condition. Highly recommended!</p>
+                        </div>
+                        <div class="review">
+                            <div class="review-header">
+                                <img src="images/avatar3.png" alt="User 5">
+                                <div class="review-info">
+                                    <h4>Arjun Patel</h4>
+                                    <div class="rating">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <p>Great experience! Very friendly and the exchange was completed smoothly.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Chatbot Icon -->
+    <div class="chatbot-icon">
+        🤖
+    </div>
+
+    <script src="scripts/profile.js"></script>
+    <script src="scripts/logout.js"></script>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 X-change. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html> 

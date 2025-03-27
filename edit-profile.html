@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Profile - X-change</title>
+    <link rel="stylesheet" href="styles/edit-profile.css">
+    <link rel="stylesheet" href="styles/logout.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Sidebar Toggle Button -->
+    <button class="sidebar-toggle" id="sidebar-toggle">
+        &#9776;
+    </button>
+
+    <!-- Sidebar Menu -->
+    <div class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <h2>X-change</h2>
+            <button class="close-btn" id="close-btn">&times;</button>
+        </div>
+        <ul class="sidebar-menu">
+            <li><a href="profile.html"><i class="fas fa-user"></i> Profile</a></li>
+            <li><a href="dashboard.html"><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
+            <li><a href="exchange.html"><i class="fas fa-exchange-alt"></i> Exchange</a></li>
+            <li><a href="browse-listings.html"><i class="fas fa-search"></i> Browse Listings</a></li>
+            <li><a href="create-listing.html"><i class="fas fa-plus-circle"></i> Create Listing</a></li>
+            <li><a href="my-listings.html"><i class="fas fa-list"></i> My Listings</a></li>
+            <li><a href="transaction-history.html"><i class="fas fa-history"></i> Transaction History</a></li>
+            <li><a href="messages.html"><i class="fas fa-comments"></i> Messages</a></li>
+            <li><a href="contact.html"><i class="fas fa-envelope"></i> Contact</a></li>
+            <li><a href="logout.html"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+        </ul>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content" id="main-content">
+        <div class="edit-profile-container">
+            <div class="edit-profile-header">
+                <h1>Edit Profile</h1>
+                <p>Update your personal information and preferences</p>
+            </div>
+
+            <form id="edit-profile-form" class="edit-profile-form">
+                <!-- Profile Picture Section -->
+                <div class="section">
+                    <h2>Profile Picture</h2>
+                    <div class="profile-picture-upload">
+                        <div class="current-picture">
+                            <img src="images/avatar9.png" alt="Current Profile Picture" id="profile-preview">
+                        </div>
+                        <div class="upload-controls">
+                            <input type="file" id="profile-picture" accept="image/*" hidden>
+                            <button type="button" class="upload-btn" id="upload-trigger">
+                                <i class="fas fa-camera"></i> Change Picture
+                            </button>
+                            <button type="button" class="remove-btn" id="remove-picture">
+                                <i class="fas fa-trash"></i> Remove
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Personal Information Section -->
+                <div class="section">
+                    <h2>Personal Information</h2>
+                    <div class="form-group">
+                        <label for="full-name">Full Name</label>
+                        <input type="text" id="full-name" name="full-name" value="Ayushi Narnolia" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" value="ayushinarnolia@gmail.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" name="phone" value="+91 88284 06350">
+                    </div>
+                    <div class="form-group">
+                        <label for="location">Location</label>
+                        <input type="text" id="location" name="location" value="Mumbai,India" required>
+                    </div>
+                </div>
+
+                <!-- About Section -->
+                <div class="section">
+                    <h2>About</h2>
+                    <div class="form-group">
+                        <label for="bio">Bio</label>
+                        <textarea id="bio" name="bio" rows="4">Tech enthusiast and avid collector. Always looking for interesting items to exchange and meeting new people in the community.</textarea>
+                    </div>
+                </div>
+
+                <!-- Preferences Section -->
+                <div class="section">
+                    <h2>Preferences</h2>
+                    <div class="form-group">
+                        <label for="preferred-categories">Preferred Categories</label>
+                        <select id="preferred-categories" name="preferred-categories" multiple>
+                            <option value="electronics" selected>Electronics</option>
+                            <option value="books">Books</option>
+                            <option value="clothing">Clothing</option>
+                            <option value="furniture">Furniture</option>
+                            <option value="sports">Sports</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Notification Preferences</label>
+                        <div class="checkbox-group">
+                            <label class="checkbox">
+                                <input type="checkbox" name="notifications" value="messages" checked>
+                                New Messages
+                            </label>
+                            <label class="checkbox">
+                                <input type="checkbox" name="notifications" value="offers" checked>
+                                Exchange Offers
+                            </label>
+                            <label class="checkbox">
+                                <input type="checkbox" name="notifications" value="updates" checked>
+                                System Updates
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Privacy Section -->
+                <div class="section">
+                    <h2>Privacy</h2>
+                    <div class="form-group">
+                        <label>Profile Visibility</label>
+                        <div class="radio-group">
+                            <label class="radio">
+                                <input type="radio" name="visibility" value="public" checked>
+                                Public
+                            </label>
+                            <label class="radio">
+                                <input type="radio" name="visibility" value="private">
+                                Private
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Form Actions -->
+                <div class="form-actions">
+                    <button type="submit" class="save-btn">Save Changes</button>
+                    <button type="button" class="cancel-btn">Cancel</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Chatbot Icon -->
+    <div class="chatbot-icon">
+        <i class="fas fa-comments"></i>
+    </div>
+
+    <script src="scripts/edit-profile.js"></script>
+    <script src="scripts/logout.js"></script>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 X-change. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html> 

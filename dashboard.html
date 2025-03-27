@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - X-change</title>
+    <link rel="stylesheet" href="styles/dashboard.css">
+    <link rel="stylesheet" href="styles/logout.css">
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <!-- Sidebar Toggle Button -->
+    <button class="sidebar-toggle" id="sidebar-toggle">
+        &#9776; <!-- Hamburger icon -->
+    </button>
+
+    <!-- Sidebar Menu (Pop-up) -->
+    <div class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <h2>X-change</h2>
+            <button class="close-btn" id="close-btn">&times;</button> <!-- Close button -->
+        </div>
+        <ul class="sidebar-menu">
+            <li><a href="profile.html"><i class="fas fa-user"></i> Profile</a></li>
+            <li><a href="dashboard.html" class="active"><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
+            <li><a href="exchange.html"><i class="fas fa-exchange-alt"></i> Exchange</a></li>
+            <li><a href="browse-listings.html"><i class="fas fa-search"></i> Browse Listings</a></li>
+            <li><a href="create-listing.html"><i class="fas fa-plus-circle"></i> Create Listing</a></li>
+            <li><a href="my-listings.html"><i class="fas fa-list"></i> My Listings</a></li>
+            <li><a href="transaction-history.html"><i class="fas fa-history"></i> Transaction History</a></li>
+            <li><a href="messages.html"><i class="fas fa-comments"></i> Messages</a></li>
+            <li><a href="contact.html"><i class="fas fa-envelope"></i> Contact</a></li>
+            <li><a href="logout.html"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+        </ul>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content" id="main-content">
+        <div class="dashboard-container">
+            <div class="dashboard-header">
+                <h1>Welcome, Ayushi!</h1>
+            </div>
+
+            <!-- Profile Snapshot at the Top -->
+            <div class="profile-snapshot">
+                <img src="images/avatar1.png" alt="User Avatar">
+                <div>
+                    <p>Name: Ayushi</p>
+                    <p>Email: ayushinarnolia@gmail.com</p>
+                </div>
+                
+            </div>
+
+            <div class="dashboard-main">
+                <!-- Stats Section -->
+                <div class="quick-stats">
+                    <div class="stat-box">
+                        <img src="images/swap symbol.png" alt="Exchanges Icon">
+                        <p>Total Exchanges: 12</p>
+                    </div>
+                    <div class="stat-box">
+                        <img src="images/task list.png" alt="Listed Items Icon">
+                        <p>Total Items Listed: 8</p>
+                    </div>
+                    <div class="stat-box">
+                        <img src="images/notif.png" alt="Notifications Icon">
+                        <p>Notifications: 5</p>
+                    </div>
+                </div>
+
+                <!-- Recent Activity Section -->
+                <div class="recent-activity">
+                    <h2>Recent Activity</h2>
+                    <ul>
+                        <li>Listed "T-Shirt" for exchange</li>
+                        <li>Received a new message from user "Shanaya"</li>
+                        <li>Completed exchange for "CAO Notes"</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Chatbot Icon -->
+    <div class="chatbot-icon">
+        🤖
+    </div>
+
+    <script src="scripts/dashboard.js"></script>
+    <script src="scripts/logout.js"></script>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 X-change. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
