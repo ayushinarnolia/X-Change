@@ -23,7 +23,7 @@ function showLogoutConfirmation() {
 
     yesBtn.addEventListener('click', () => {
         // Redirect to home page
-        window.location.href = 'home.html';
+        window.location.href = 'index.html';
     });
 
     noBtn.addEventListener('click', () => {
