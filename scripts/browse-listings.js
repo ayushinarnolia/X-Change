@@ -29,14 +29,36 @@ overlay.addEventListener('click', () => {
 });
 
 // JavaScript for Browse Listings Page
-// Example: Handle filter functionality
-const filterBtn = document.querySelector('.filter-btn');
-const categoryFilter = document.getElementById('category-filter');
-const conditionFilter = document.getElementById('condition-filter');
+document.addEventListener('DOMContentLoaded', () => {
+    const filterBtn = document.querySelector('.filter-btn');
+    const categoryFilter = document.getElementById('category-filter');
+    const conditionFilter = document.getElementById('condition-filter');
+    const listingCards = document.querySelectorAll('.listing-card');
 
-filterBtn.addEventListener('click', () => {
-    const category = categoryFilter.value;
-    const condition = conditionFilter.value;
-    alert(`Applying Filters: Category - ${category}, Condition - ${condition}`);
-    // Add filter logic here
+    // Function to filter listings
+    function filterListings() {
+        const selectedCategory = categoryFilter.value.toLowerCase();
+        const selectedCondition = conditionFilter.value.toLowerCase();
+
+        listingCards.forEach(card => {
+            const cardCategory = card.querySelector('p:nth-of-type(1)').textContent.split(': ')[1].toLowerCase();
+            const cardCondition = card.querySelector('p:nth-of-type(2)').textContent.split(': ')[1].toLowerCase();
+            
+            const categoryMatch = selectedCategory === 'all' || cardCategory === selectedCategory;
+            const conditionMatch = selectedCondition === 'all' || cardCondition === selectedCondition;
+            
+            if (categoryMatch && conditionMatch) {
+                card.style.display = 'block';
+            } else {
+                card.style.display = 'none';
+            }
+        });
+    }
+
+    // Event listener for filter button
+    filterBtn.addEventListener('click', filterListings);
+
+    // Add event listeners for immediate filtering when options change
+    categoryFilter.addEventListener('change', filterListings);
+    conditionFilter.addEventListener('change', filterListings);
 });
